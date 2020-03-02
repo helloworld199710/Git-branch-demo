@@ -15,6 +15,10 @@ app.get("/users", basicLogger, authenticate, function(req, res) {
   res.send("Users route");
 });
 
+app.get("/someRoute", function(req, res) {
+  res.send("Some route");
+});
+
 app.listen(1234, function() {
   console.log("Server connected");
 });
