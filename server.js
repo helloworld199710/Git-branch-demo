@@ -2,11 +2,16 @@ var express = require("express");
 var authenticate = require("./middleware/authenticate");
 var app = express();
 
-app.get("/", function(req, res) {
+function basicLogger(req, res, next) {
+  console.log(req.url);
+  next();
+}
+
+app.get("/", basicLogger, function(req, res) {
   res.send("Hello world");
 });
 
-app.get("/users", authenticate, function(req, res) {
+app.get("/users", basicLogger, authenticate, function(req, res) {
   res.send("Users route");
 });
 
