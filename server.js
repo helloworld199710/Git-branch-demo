@@ -19,6 +19,10 @@ app.get("/someRoute", function(req, res) {
   res.send("Some route");
 });
 
+app.get("/someOtherRoute", function(req, res) {
+  res.send("Some other route");
+});
+
 app.listen(1234, function() {
   console.log("Server connected");
 });
