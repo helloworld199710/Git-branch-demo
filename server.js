@@ -23,6 +23,10 @@ app.get("/someOtherRoute", function(req, res) {
   res.send("Some other route");
 });
 
+app.get("/cadbury", function(req, res) {
+  res.send("Cadbury route");
+});
+
 app.listen(1234, function() {
   console.log("Server connected");
 });
